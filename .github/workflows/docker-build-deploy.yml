@@ -24,7 +24,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          cd ansible-docker
+          cd ansible-docker/docker
           docker build -t my-nginx-app -f docker/Dockerfile .
 
       - name: Run docker-compose
