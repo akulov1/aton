@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
-COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
-COPY docker/certs /etc/nginx/certs
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY certs /etc/nginx/certs
 
 EXPOSE 80 443
 
