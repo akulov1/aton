@@ -1,0 +1,31 @@
+- name: Установка и настройка nginx на Ubuntu
+  hosts: web
+  become: true
+
+  vars_files:
+    - variables/all.yml
+
+  tasks:
+    - name: Установка nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Копирование конфигурации nginx из шаблона
+      template:
+        src: templates/nginx.conf.j2
+        dest: /etc/nginx/sites-available/default
+        mode: '0644'
+
+    - name: Проверка, что nginx запущен и включен
+      service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Ожидание, пока nginx будет доступен на настроенном порту
+      wait_for:
+        port: "{{ nginx_listen_port }}"
+        timeout: 30
+

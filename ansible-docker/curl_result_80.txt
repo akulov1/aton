@@ -1,0 +1,30 @@
+* Host localhost:80 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying [::1]:80...
+* Connected to localhost (::1) port 80
+> GET / HTTP/1.1
+> Host: localhost
+> User-Agent: curl/8.5.0
+> Accept: */*
+> 
+< HTTP/1.1 301 Moved Permanently
+< Server: nginx/1.27.5
+< Date: Sun, 11 May 2025 11:53:58 GMT
+< Content-Type: text/html
+< Content-Length: 169
+< Connection: keep-alive
+< Location: https://localhost/
+< 
+{ [169 bytes data]
+100   169  100   169    0     0   108k      0 --:--:-- --:--:-- --:--:--  165k
+* Connection #0 to host localhost left intact
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.27.5</center>
+</body>
+</html>

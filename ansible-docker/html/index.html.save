@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevOps Test Page</title>
+</head>
+<body>
+    <h1>Hello Nginx with SSL!</h1>
+</body>
+</html>
